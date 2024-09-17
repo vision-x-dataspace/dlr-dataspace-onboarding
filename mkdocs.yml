@@ -92,15 +92,19 @@ copyright: |
 nav:
   - Home:
     - index.md
-  - Manual:
-    - manual/index.md
-    - manual/create_asset.md
-    - manual/create_policy_definition.md
-    - manual/create_contract_definition.md
-    - manual/fetch_catalog.md
-    - manual/initiate_negotiation.md
-    - manual/initiate_transfer.md
-  - Postman:
-    - postman/index.md
-    - postman/alice.md
-    - postman/bob.md
+  - File Transfer:
+    - file-transfer/index.md
+    - Manual:
+      - file-transfer/manual/index.md
+      - file-transfer/manual/create_asset.md
+      - file-transfer/manual/create_policy_definition.md
+      - file-transfer/manual/create_contract_definition.md
+      - file-transfer/manual/fetch_catalog.md
+      - file-transfer/manual/initiate_negotiation.md
+      - file-transfer/manual/initiate_transfer.md
+    - Postman:
+      - file-transfer/postman/index.md
+      - file-transfer/postman/alice.md
+      - file-transfer/postman/bob.md
+    - Python:
+      - file-transfer/python/index.md
