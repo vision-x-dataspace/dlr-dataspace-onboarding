@@ -8,7 +8,7 @@ A policy is a declaration of a Data Consumer's rights and duties. Policies thems
 
 ```http
 POST /v2/policydefinitions HTTP/1.1
-Host: http://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
+Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
 X-Api-Key: <your-password>
 Content-Type: application/json
 ```

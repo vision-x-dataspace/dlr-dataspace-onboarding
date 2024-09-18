@@ -10,7 +10,7 @@ Contract Negotiation is the second check a Data Consumer has to pass before gett
 
 ```http
 POST /v2/contractnegotiations HTTP/1.1
-Host: http://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
+Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
 X-Api-Key: <your-password>
 Content-Type: application/json
 ```
@@ -68,7 +68,7 @@ For more detailed information see [here](https://github.com/eclipse-tractusx/tra
 
 ```http
 GET /v2/contractnegotiation/<@id> HTTP/1.1
-Host: http://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
+Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
 X-Api-Key: <your-password>
 Content-Type: application/json
 ```

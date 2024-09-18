@@ -8,7 +8,7 @@ An Asset is the fundamental representation of an arbitrary backend interface in 
 
 ```http
 POST /v3/assets HTTP/1.1
-Host: http://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
+Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
 X-Api-Key: <your-password>
 Content-Type: application/json
 ```
