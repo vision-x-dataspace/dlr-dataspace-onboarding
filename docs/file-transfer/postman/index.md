@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here we describe how to interact with the DLR Base-X Dataspace via http requests using [Postman](https://www.postman.com).
+Here we describe how to interact with the DLR-Dataspace via http requests using [Postman](https://www.postman.com).
 
 You can download the `Postman` collection from [here](collections/Onboarding%20Tutorial%20Postman.postman_collection.json).
 

@@ -2,4 +2,4 @@
 
 ## Introduction
 
-Here we describe how to interact with the DLR Base-X Dataspace using the `mxd-client` python module. (coming soon)
+Here we describe how to interact with the DLR-Dataspace using the `mxd-client` python module. (coming soon)

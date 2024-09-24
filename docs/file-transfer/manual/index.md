@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here we describe how to interact with the DLR Base-X Dataspace manually via http requests.
+Here we describe how to interact with the DLR-Dataspace manually via http requests.
 
 The individual explanations were heavily drawn from and inspired by the [mangement-api-walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/tree/release/0.6.0/docs/usage/management-api-walkthrough) (TractusX).
 

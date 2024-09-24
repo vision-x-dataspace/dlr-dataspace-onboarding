@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-site_name: Base-X Dataspace Documentation
+site_name: DLR-Dataspace Documentation
 
 theme:
   name: material
