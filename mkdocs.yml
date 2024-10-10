@@ -108,3 +108,7 @@ nav:
       - file-transfer/postman/bob.md
     - Python:
       - file-transfer/python/index.md
+  - Miscellaneous:
+    - miscellaneous/index.md
+    - miscellaneous/filtered_catalog.md
+    - miscellaneous/failed_negotiations_and_transfers.md
