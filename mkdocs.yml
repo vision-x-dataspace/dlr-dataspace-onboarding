@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-site_name: DLR-Dataspace Documentation
+site_name: Vision-X Dataspace Documentation
 
 theme:
   name: material
@@ -112,3 +112,11 @@ nav:
     - miscellaneous/index.md
     - miscellaneous/filtered_catalog.md
     - miscellaneous/failed_negotiations_and_transfers.md
+  - Vision-X Workshop:
+    - workshop/index.md
+    - Tutorial: 
+      - workshop/tutorial/index.md
+      - workshop/tutorial/postman.md
+      - workshop/tutorial/minio.md
+      - workshop/tutorial/alice.md
+      - workshop/tutorial/bob.md

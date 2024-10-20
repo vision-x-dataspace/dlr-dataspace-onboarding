@@ -10,7 +10,7 @@ The `Federated Catalog` is unique to each `Participant` and periodically updated
 
 ## Initiate Negotation
 
-The second step is to take the 'participantId' and'originator' of the `Catalog` where the desired `Offer` is located in as well as the whole 'odrl:hasPolicy' of the `Offer` and use them to initiate a `Contract Negotiation` with the `Participant` providing the `Offer`.
+The second step is to take the `participantId` and `originator` of the `Catalog` where the desired `Offer` is located in as well as the whole `odrl:hasPolicy` of the `Offer` and use them to initiate a `Contract Negotiation` with the `Participant` providing the `Offer`.
 
 These values are automatically retrieved and stored as variables in the `Postman Collection`.
 
@@ -24,7 +24,7 @@ The `ID` of the `Contract Agreement` is automatically retrieved and stored as va
 
 # Initiate Transfer
 
-In this step a `Transfer Process` is initiated in a similar way to the `Contract Negotiation` by additionally referencing the `Contract Agreement` by its `ÌD` and providing sufficient addresses and credentials for the `Connector` providing the `Offer` to put the file in some bucket of an `AmazonS3` storage.
+In this step a `Transfer Process` is initiated in a similar way to the `Contract Negotiation` by additionally referencing the `Contract Agreement` by its `ID` and providing sufficient addresses and credentials for the `Connector` providing the `Offer` to put the file in some bucket of an `AmazonS3` storage.
 
 The `ID` of the `Transfer Process` is automatically retrieved and stored as variables in the `Postman Collection`.
 

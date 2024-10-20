@@ -12,7 +12,7 @@ The `Asset` contains all necessary information for the `Connector` to later retr
 
 The next step is to create a `Policy Definition` that will be used as the `Access Policy` for the `Offer`.
 
-The specific `Policy` here madates to present `BpnCredential`. All `Participants` of the `Dataspace` already possess this `Credential` by default and the `Connectors` will automatically present this `Credential` when communicating with one another.
+The specific `Policy` here mandates to present `BpnCredential`. All `Participants` of the `Dataspace` already possess this `Credential` by default and the `Connectors` will automatically present this `Credential` when communicating with one another.
 
 ## Create Contract Policy
 
