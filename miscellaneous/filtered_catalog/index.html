@@ -1053,8 +1053,6 @@
     
       
         
-          
-        
       
         
       
@@ -1079,24 +1077,16 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../workshop/tutorial/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Tutorial
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -1104,8 +1094,6 @@
             Tutorial
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
             
               
                 
@@ -1182,6 +1170,27 @@
   
   <span class="md-ellipsis">
     4. Transfer File to the Consumer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/tutorial/advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Advanced Topics
   </span>
   
 
@@ -1284,14 +1293,14 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div>
-<p>One can also further filter this by adding to the 'filterExpression' list. For example
+<p>One can also further filter this by adding to the 'filterExpression' list. For example</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;operandLeft&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/id&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;like&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;operandRight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-asset-%&quot;</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
 </code></pre></div>
-This filters for all assets whose 'id' start with 'test-asset-'</p>
+<p>This filters for all assets whose 'id' start with 'test-asset-'</p>
 <h2 id="single-dataset">Single Dataset<a class="headerlink" href="#single-dataset" title="Permanent link">&para;</a></h2>
 <p>To get a single dataset from a catalog you can send the following request.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">POST</span> <span class="nn">/v2/catalog/dataset/request</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1306,14 +1315,14 @@ This filters for all assets whose 'id' start with 'test-asset-'</p>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dataspace-protocol-http&quot;</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
 </code></pre></div>
-<p>This will only get the dataset with id 'asset-1' and as such has the same effect as using
+<p>This will only get the dataset with id 'asset-1' and as such has the same effect as using</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;operandLeft&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/id&quot;</span><span class="p">,</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="p">,</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;operandRight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asset-1&quot;</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
 </code></pre></div>
-as 'filterExpression' in the 'Single Catalog' section.</p>
+<p>as 'filterExpression' in the 'Single Catalog' section.</p>
 
 
 
