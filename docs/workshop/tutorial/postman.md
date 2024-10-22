@@ -1,5 +1,7 @@
 # 1. Set up Postman
 
+Please start by downloading the Postman Collection from [here](../../collections/Onboarding%20Tutorial%20Postman.postman_collection.json).
+
 ## 1. Log in to Postman
 
 **Visit the Postman Website**: Open your web browser and navigate to [Postman](https://www.postman.com).
@@ -11,13 +13,13 @@
 
 ## 2. Import the Postman Collection
 
-![postman_import](/img/postman_import.png)
+![postman_import](../../img/postman_import.png)
 
 Here, locate the postman collection you just downloaded.
 
 ## 3. Go to the Variables section
 
-![postman_variables](/img/postman_variables.png)
+![postman_variables](../../img/postman_variables.png)
 
 Here, provide the required values in the *Variables* section.
 
@@ -49,6 +51,6 @@ You need to copy the values into both, *Inital value* and *Current Value* fields
 
 ## 5. Save the variables
 
-![postman_save](/img/postman_save.png)
+![postman_save](../../img/postman_save.png)
 
 After you copied all values, don't forget to save.

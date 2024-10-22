@@ -6,7 +6,7 @@ The **Consumer Connector** is called **Bob**.
 
 *Please go to the Postman folder called Bob.*
 
-![bob.png](/img/bob.png)
+![bob.png](../../img/bob.png)
 
 ---
 

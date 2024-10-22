@@ -25,6 +25,7 @@ Content-Type: application/json
 ```
 
 One can also further filter this by adding to the 'filterExpression' list. For example
+
 ```json
 {
   "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -32,6 +33,7 @@ One can also further filter this by adding to the 'filterExpression' list. For e
   "operandRight": "test-asset-%"
 }
 ```
+
 This filters for all assets whose 'id' start with 'test-asset-'
 
 ## Single Dataset
@@ -55,6 +57,7 @@ Content-Type: application/json
 ```
 
 This will only get the dataset with id 'asset-1' and as such has the same effect as using
+
 ```json
 {
   "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -62,4 +65,5 @@ This will only get the dataset with id 'asset-1' and as such has the same effect
   "operandRight": "asset-1"
 }
 ```
+
 as 'filterExpression' in the 'Single Catalog' section.

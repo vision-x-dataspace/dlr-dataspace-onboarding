@@ -4,7 +4,7 @@
 
 Here we describe how to interact with the DLR-Dataspace via http requests using [Postman](https://www.postman.com).
 
-You can download the `Postman` collection from [here](/collections/Onboarding%20Tutorial%20Postman.postman_collection.json).
+You can download the `Postman` collection from [here](../../collections/Onboarding%20Tutorial%20Postman.postman_collection.json).
 
 ## Prerequisites
 

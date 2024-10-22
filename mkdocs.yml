@@ -36,6 +36,9 @@ theme:
       accent: deep purple
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - attr_list
   - footnotes
   - md_in_html
@@ -115,8 +118,8 @@ nav:
   - Vision-X Workshop:
     - workshop/index.md
     - Tutorial: 
-      - workshop/tutorial/index.md
       - workshop/tutorial/postman.md
       - workshop/tutorial/minio.md
       - workshop/tutorial/alice.md
       - workshop/tutorial/bob.md
+      - workshop/tutorial/advanced.md

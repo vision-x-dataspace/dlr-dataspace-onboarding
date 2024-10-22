@@ -6,7 +6,7 @@ The **Provider Connector** is called **Alice**.
 
 *Please go to the Postman folder called Alice.*
 
-![alice.png](/img/alice.png)
+![alice.png](../../img/alice.png)
 
 ---
 
