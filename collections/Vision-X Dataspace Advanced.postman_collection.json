@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "a4e8e611-bd6d-496a-9013-63d520401eee",
+		"name": "Vision-X Dataspace Advanced",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31636196"
+	},
+	"item": [
+		{
+			"name": "Create Special Contract",
+			"item": [
+				{
+					"name": "Create All Access Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "password",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"@context\": {\n    \"odrl\": \"http://www.w3.org/ns/odrl/2/\"\n  },\n  \"@type\": \"PolicyDefinitionRequest\",\n  \"@id\": \"{{ACCESS_POLICY_ID}}\",\n  \"policy\": {\n    \"@type\": \"Policy\",\n    \"odrl:permission\": [\n      {\n        \"odrl:action\": \"use\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{ALICE_MANAGEMENT}}/v2/policydefinitions",
+							"host": [
+								"{{ALICE_MANAGEMENT}}"
+							],
+							"path": [
+								"v2",
+								"policydefinitions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"@context\": {},\r\n  \"@id\": \"{{CONTRACT_ID}}\",\r\n  \"@type\": \"ContractDefinition\",\r\n  \"accessPolicyId\": \"{{ACCESS_POLICY_ID}}\",\r\n  \"contractPolicyId\": \"{{CONTRACT_POLICY_ID}}\",\r\n  \"assetsSelector\": {\r\n    \"@type\": \"CriterionDto\",\r\n    \"operandLeft\": \"https://w3id.org/edc/v0.0.1/ns/id\",\r\n    \"operator\": \"=\",\r\n    \"operandRight\": \"{{ASSET_ID}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ALICE_MANAGEMENT}}/v2/contractdefinitions",
+							"host": [
+								"{{ALICE_MANAGEMENT}}"
+							],
+							"path": [
+								"v2",
+								"contractdefinitions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filter Catalog I",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"@context\":{\n      \n   },\n   \"counterPartyAddress\":\"http://bob-controlplane:8084/api/v1/dsp\",\n   \"protocol\":\"dataspace-protocol-http\",\n   \"querySpec\":{\n      \"offset\":0,\n      \"limit\":50,\n      \"filterExpression\":[\n         {\n            \"operandLeft\":\"https://w3id.org/edc/v0.0.1/ns/id\",\n            \"operator\":\"like\",\n            \"operandRight\":\"test-asset-%\"\n         }\n      ]\n   }\n}"
+				},
+				"url": {
+					"raw": "https://vision-x-dataspace.base-x-ecosystem.org/alice/management/v2/catalog/request",
+					"protocol": "https",
+					"host": [
+						"vision-x-dataspace",
+						"base-x-ecosystem",
+						"org"
+					],
+					"path": [
+						"alice",
+						"management",
+						"v2",
+						"catalog",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Catalog II",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"@context\":{\n      \n   },\n   \"counterPartyAddress\":\"http://bob-controlplane:8084/api/v1/dsp\",\n   \"protocol\":\"dataspace-protocol-http\",\n   \"querySpec\":{\n      \"offset\":0,\n      \"limit\":50,\n      \"filterExpression\":[\n         {\n            \"operandLeft\":\"https://w3id.org/edc/v0.0.1/ns/id\",\n            \"operator\":\"=\",\n            \"operandRight\":\"test-asset-1\"\n         }\n      ]\n   }\n}"
+				},
+				"url": {
+					"raw": "https://vision-x-dataspace.base-x-ecosystem.org/alice/management/v2/catalog/request",
+					"protocol": "https",
+					"host": [
+						"vision-x-dataspace",
+						"base-x-ecosystem",
+						"org"
+					],
+					"path": [
+						"alice",
+						"management",
+						"v2",
+						"catalog",
+						"request"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ACCESS_POLICY_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "CONTRACT_POLICY_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "CONTRACT_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ASSET_ID",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
