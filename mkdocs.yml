@@ -95,6 +95,11 @@ copyright: |
 nav:
   - Home:
     - index.md
+  - Connector:
+    - connector/index.md
+    - connector/manual.md
+    - connector/postman.md
+    - connector/endpoints.md
   - File Transfer:
     - file-transfer/index.md
     - Manual:

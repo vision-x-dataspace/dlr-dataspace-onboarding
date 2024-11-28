@@ -2,6 +2,8 @@
 
 In this tutorial you will learn how to transfer a file between `AmazonS3` storages via the `Dataspace`. There are three versions of this tutorial with varying levels of detail.
 
+You will need tokens to access the `Connectors`. For an explanation how to get these see [Connectors](../connector/index.md).
+
 ## 1. Manual
 
 The manual tutorial explains the basic on how to communicate with the `Connectors` by using simple http requests and provides low level explanations of the steps involved.

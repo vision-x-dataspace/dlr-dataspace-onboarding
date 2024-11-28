@@ -10,12 +10,12 @@ Contract Negotiation is the second check a Data Consumer has to pass before gett
 
 ```http
 POST /v2/contractnegotiations HTTP/1.1
-Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
-X-Api-Key: <your-password>
+Host: https://vision-x-dataspace.base-x-ecosystem.org/backend/connectors/<your-connector-name>/management
+Authorization: Bearer <your-token>
 Content-Type: application/json
 ```
 
-Replace `<your-connector-name>` with the actual name of the connector assigned to you and `<your-password>` with your password.
+Replace `<your-connector-name>` with the actual name of the connector assigned to you and `<your-token>` with your token.
 
 ```json
 {
@@ -68,12 +68,12 @@ For more detailed information see [here](https://github.com/eclipse-tractusx/tra
 
 ```http
 GET /v2/contractnegotiation/<@id> HTTP/1.1
-Host: https://vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
-X-Api-Key: <your-password>
+Host: https://vision-x-dataspace.base-x-ecosystem.org/backend/connectors/<your-connector-name>/management
+Authorization: Bearer <your-token>
 Content-Type: application/json
 ```
 
-Replace `<your-connector-name>` with the actual name of the connector assigned to you and `<your-password>` with your password. Also, replace `<@id>` by the ID revieved from above.
+Replace `<your-connector-name>` with the actual name of the connector assigned to you and `<your-token>` with your token. Also, replace `<@id>` by the ID revieved from above.
 
 The returned details for the negotiation should look something like this:
 

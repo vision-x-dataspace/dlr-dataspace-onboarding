@@ -8,8 +8,8 @@ A Contract Definition is the connection between a set of Assets with one Access 
 
 ```http
 POST /v2/contractdefinitions HTTP/1.1
-Host: https:/vision-x-dataspace.base-x-ecosystem.org/<your-connector-name>/management
-X-Api-Key: <your-password>
+Host: https:/vision-x-dataspace.base-x-ecosystem.org/backend/connectors/<your-connector-name>/management
+Authorization: Bearer <your-token>
 Content-Type: application/json
 ```
 
