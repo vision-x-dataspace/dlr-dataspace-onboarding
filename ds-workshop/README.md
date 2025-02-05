@@ -20,3 +20,10 @@ This folder contains several Jupiter Notebooks explaining how to use the Managem
 3. [EDR Transfer](./edr_transfer.ipynb)
 
 For the transfer ones you will have to fill in some values regarding your user account as well the credentials for your storage.
+
+## References
+
+- [Dataspace Frontend](https://dataspace-dev-dataspace.base-x-ecosystem.org/)
+- [API documentation](https://app.swaggerhub.com/apis/eclipse-tractusx-bot/tractusx-edc/0.6.0#/)
+- [Tractus-x API Walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/tree/0.6.0/docs/usage/management-api-walkthrough)
+- [MXD](https://github.com/eclipse-tractusx/tutorial-resources/tree/main/mxd)
