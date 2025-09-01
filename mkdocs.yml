@@ -3,7 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-site_name: Vision-X Dataspace Documentation
+site_name: Dataspace Documentation
+site_url: https://vision-x-dataspace.github.io/dlr-dataspace-onboarding
 
 theme:
   name: material
@@ -26,14 +27,14 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-      primary: purple
-      accent: deep purple
+      primary: blue
+      accent: indigo
     - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-      primary: purple
-      accent: deep purple
+      primary: blue
+      accent: indigo
 
 markdown_extensions:
   - admonition
@@ -67,6 +68,8 @@ markdown_extensions:
 
 plugins:
   - search
+  - mkdocs-jupyter:
+      include_source: true
 
 extra:
   social:
@@ -94,37 +97,31 @@ copyright: |
 
 nav:
   - Home:
-    - index.md
-  - Connector:
-    - connector/index.md
-    - connector/manual.md
-    - connector/postman.md
-    - connector/endpoints.md
-  - File Transfer:
-    - file-transfer/index.md
-    - Manual:
-      - file-transfer/manual/index.md
-      - file-transfer/manual/create_asset.md
-      - file-transfer/manual/create_policy_definition.md
-      - file-transfer/manual/create_contract_definition.md
-      - file-transfer/manual/fetch_catalog.md
-      - file-transfer/manual/initiate_negotiation.md
-      - file-transfer/manual/initiate_transfer.md
-    - Postman:
-      - file-transfer/postman/index.md
-      - file-transfer/postman/alice.md
-      - file-transfer/postman/bob.md
-    - Python:
-      - file-transfer/python/index.md
-  - Miscellaneous:
-    - miscellaneous/index.md
-    - miscellaneous/filtered_catalog.md
-    - miscellaneous/failed_negotiations_and_transfers.md
-  - Vision-X Workshop:
-    - workshop/index.md
-    - Tutorial: 
-      - workshop/tutorial/postman.md
-      - workshop/tutorial/minio.md
-      - workshop/tutorial/alice.md
-      - workshop/tutorial/bob.md
-      - workshop/tutorial/advanced.md
+    - home/index.md
+    - home/account.md
+    - home/references.md
+  - Website:
+    - frontend/index.md
+    - frontend/dashboard.md
+    - frontend/assets.md
+    - frontend/catalog.md
+    - frontend/agreements.md
+  - API:
+    - api/index.md
+    - api/getting-started.md
+    - api/connectors.md
+    - api/connector-apis.md
+    - api/federated.md
+    - api/bdrs.md
+    - api/issuer.md
+  - Jupyter:
+    - jupyter/index.md
+    - jupyter/offer-file-amazon.ipynb
+    - jupyter/offer-file-azure.ipynb
+    - jupyter/offer-service-http.ipynb
+    - jupyter/negotiate-offer.ipynb
+    - jupyter/transfer-file-amazon.ipynb
+    - jupyter/transfer-file-azure.ipynb
+    - jupyter/transfer-http-push.ipynb
+    - jupyter/transfer-http-pull.ipynb
+    - jupyter/policies.ipynb
