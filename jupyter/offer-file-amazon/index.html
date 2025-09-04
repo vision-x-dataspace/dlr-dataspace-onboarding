@@ -1754,11 +1754,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">base_url</span> <span class="o">=</span> <span class="s2">"https://vision-x-auth.base-x-ecosystem.org"</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">"https://vision-x-api.base-x-ecosystem.org"</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import requests
 
-base_url = "https://vision-x-auth.base-x-ecosystem.org"</div>
+base_url = "https://vision-x-api.base-x-ecosystem.org"</div>
 </div>
 </div>
 </div>
@@ -1921,7 +1921,8 @@ asset_id = "my-asset-id"</div>
   <span class="s2">"@id"</span><span class="p">:</span> <span class="n">asset_id</span><span class="p">,</span>
   <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"File </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"File offer example with AmazonS3"</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"File offer example with AmazonS3"</span><span class="p">,</span>
+    <span class="s2">"offerType"</span><span class="p">:</span> <span class="s2">"data"</span>
   <span class="p">},</span>
   <span class="s2">"dataAddress"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"@type"</span><span class="p">:</span> <span class="s2">"DataAddress"</span><span class="p">,</span>
@@ -1945,7 +1946,8 @@ payload = {
   "@id": asset_id,
   "properties": {
     "name": f"File {filename}",
-    "description": "File offer example with AmazonS3"
+    "description": "File offer example with AmazonS3",
+    "offerType": "data"
   },
   "dataAddress": {
     "@type": "DataAddress",
@@ -2185,10 +2187,10 @@ print(f"Created Policy with ID: {policy_id}")</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Some unique ID</span>
-<span class="n">contract_id</span> <span class="o">=</span> <span class="s2">"my-policy-id"</span>
+<span class="n">contract_id</span> <span class="o">=</span> <span class="s2">"my-contract-id"</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-8"># Some unique ID
-contract_id = "my-policy-id"</div>
+contract_id = "my-contract-id"</div>
 </div>
 </div>
 </div>
@@ -2230,7 +2232,7 @@ contract_id = "my-policy-id"</div>
     <span class="s2">"odrl"</span><span class="p">:</span> <span class="s2">"http://www.w3.org/ns/odrl/2/"</span>
   <span class="p">},</span>
   <span class="s2">"@id"</span><span class="p">:</span> <span class="n">contract_id</span><span class="p">,</span>
-  <span class="s2">"accessPolicyId"</span><span class="p">:</span> <span class="n">policy_id</span><span class="p">,</span>
+  <span class="s2">"accessPolicyId"</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
   <span class="s2">"contractPolicyId"</span><span class="p">:</span> <span class="n">policy_id</span><span class="p">,</span>
   <span class="s2">"assetsSelector"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"operandLeft"</span><span class="p">:</span> <span class="s2">"https://w3id.org/edc/v0.0.1/ns/id"</span><span class="p">,</span>
@@ -2249,7 +2251,7 @@ payload = {
     "odrl": "http://www.w3.org/ns/odrl/2/"
   },
   "@id": contract_id,
-  "accessPolicyId": policy_id,
+  "accessPolicyId": "all",
   "contractPolicyId": policy_id,
   "assetsSelector": {
     "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
