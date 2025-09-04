@@ -57,8 +57,6 @@ For explanations on the exact values you need to provide, please refer to the we
 }
 ```
 
-Note: Azure Storage is currently not usable due to a bug in the Connector.
-
 ## Edit Connectors
 
 Simlarly to creating a Connector you can edit a Connector by sending a `PUT` request to `/connectors/<connector-name>`. The payload you need to provide here is exactly the same as for creating a Connector. After a successful request the Connector will restart using the newly provided configuration.
