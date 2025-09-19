@@ -1910,6 +1910,7 @@ asset_id = "my-asset-id"</div>
     <span class="s2">"baseUrl"</span><span class="p">:</span> <span class="n">api_url</span><span class="p">,</span>
     <span class="s2">"proxyMethod"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>  <span class="c1"># allow methods other than GET</span>
     <span class="s2">"proxyBody"</span><span class="p">:</span> <span class="s2">"true"</span>     <span class="c1"># allow request bodies</span>
+  <span class="c1"># "header:authorization": "&lt;some-token&gt;"</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1932,12 +1933,13 @@ payload = {
     "baseUrl": api_url,
     "proxyMethod": "true",  # allow methods other than GET
     "proxyBody": "true"     # allow request bodies
+  # "header:authorization": "<some-token>"
   }
 }
 
 response = requests.post(url, json=payload, headers=token_header)
 response.raise_for_status()
-print(f"Created Asset with ID: {asset_id}")</div>
+print(f"Created Asset with ID: {asset_id}")</some-token></div>
 </div>
 </div>
 </div>
