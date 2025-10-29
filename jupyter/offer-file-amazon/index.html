@@ -2055,7 +2055,7 @@ policy_id = "my-policy-id"</div>
   <span class="s2">"@type"</span><span class="p">:</span> <span class="s2">"odrl:Set"</span><span class="p">,</span>
   <span class="s2">"odrl:permission"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"odrl:action"</span><span class="p">:</span> <span class="s2">"USE"</span>
+      <span class="s2">"odrl:action"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="s2">"cx-policy:access"</span><span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span>
@@ -2065,7 +2065,7 @@ policy = {
   "@type": "odrl:Set",
   "odrl:permission": [
     {
-      "odrl:action": "USE"
+      "odrl:action": {"@id": "cx-policy:access"}
     }
   ]
 }</div>
@@ -2107,7 +2107,8 @@ policy = {
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/connectors/</span><span class="si">{</span><span class="n">connector_name</span><span class="si">}</span><span class="s2">/cp/management/v3/policydefinitions"</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"@context"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"odrl"</span><span class="p">:</span> <span class="s2">"http://www.w3.org/ns/odrl/2/"</span>
+    <span class="s2">"odrl"</span><span class="p">:</span> <span class="s2">"http://www.w3.org/ns/odrl/2/"</span><span class="p">,</span>
+    <span class="s2">"cx-policy"</span><span class="p">:</span> <span class="s2">"https://w3id.org/catenax/2025/9/policy/"</span>
   <span class="p">},</span>
   <span class="s2">"@id"</span><span class="p">:</span> <span class="n">policy_id</span><span class="p">,</span>
   <span class="s2">"policy"</span><span class="p">:</span> <span class="n">policy</span>
@@ -2120,7 +2121,8 @@ policy = {
 <div class="clipboard-copy-txt" id="cell-7">url = f"{base_url}/connectors/{connector_name}/cp/management/v3/policydefinitions"
 payload = {
   "@context": {
-    "odrl": "http://www.w3.org/ns/odrl/2/"
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "cx-policy": "https://w3id.org/catenax/2025/9/policy/"
   },
   "@id": policy_id,
   "policy": policy

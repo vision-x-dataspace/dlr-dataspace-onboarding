@@ -1180,7 +1180,7 @@
 <h1 id="issuer">Issuer<a class="headerlink" href="#issuer" title="Permanent link">&para;</a></h1>
 <p>The Issuer is responsible for issuing <code>Verifiable Credentials</code> and verifying <code>Verifiably Presentations</code>.</p>
 <h2 id="issue-credentials">Issue Credentials<a class="headerlink" href="#issue-credentials" title="Permanent link">&para;</a></h2>
-<p>Credentials can be issued by sending a <code>POST</code> request to <code>/issuer/issue</code>. As this endpoint is protected and can only be used by administrators, this documentation will provide no detailled explanation on this endpoint.</p>
+<p>Credentials can be issued by sending a <code>POST</code> request to <code>/issuer/issue/membership</code>, <code>/issuer/issue/bpn</code> and <code>/issuer/issue/governance</code> respectively. As these endpoints are protected and can only be used by administrators, this documentation will provide no detailled explanation on these endpoints.</p>
 <h2 id="did-document">DID Document<a class="headerlink" href="#did-document" title="Permanent link">&para;</a></h2>
 <p>The <code>DID Document</code> can be viewed by sending a <code>GET</code> request to <code>/issuer/did.json</code>. It can be used to verify <code>Verifiable Credentials</code> that where issued by the Issuer.</p>
 
