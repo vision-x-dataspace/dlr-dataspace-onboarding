@@ -21,11 +21,11 @@ The `Default API` exposes endpoints for checking health, readiness and simlar st
 
 ### Public API
 
-The `Public API` is used to perform `PULL` transfers. It is available at `/connectors/<connector-name>/dp/public`. For an example on how to utilize this API, see [Tractus-X EDC Walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/blob/0.9.0/docs/usage/management-api-walkthrough/07_edrs.md).
+The `Public API` is used to perform `PULL` transfers. It is available at `/connectors/<connector-name>/dp/public`. For an example on how to utilize this API, see [Tractus-X EDC Walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/blob/0.11.0/docs/usage/management-api-walkthrough/07_edrs.md).
 
 ### Proxy API
 
-The `Proxy API` can also alternatively be used for `PULL` transfers. It is available at `/connectors/<connector-name>/dp/proxy` and all of its endpoints are protected. For an example on how to utilize this API, see [Tractus-X EDC Walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/blob/0.9.0/docs/usage/management-api-walkthrough/07_edrs.md).
+The `Proxy API` can also alternatively be used for `PULL` transfers. It is available at `/connectors/<connector-name>/dp/proxy` and all of its endpoints are protected. For an example on how to utilize this API, see [Tractus-X EDC Walkthrough](https://github.com/eclipse-tractusx/tractusx-edc/blob/0.11.0/docs/usage/management-api-walkthrough/07_edrs.md).
 
 ## Default API
 

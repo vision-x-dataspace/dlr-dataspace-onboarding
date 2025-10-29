@@ -1,6 +1,6 @@
 # Getting started
 
-To use most API endpoints you need to provide a bearer token ([JWT](https://de.wikipedia.org/wiki/JSON_Web_Token)) in the `Authorization` header of you requests. This token can be aquired from [Keycloak](https://github.com/keycloak/keycloak) running on [vision-x-auth.base-x-ecosystem.org](https://vision-x-auth.base-x-ecosystem.org) via [mTLS](https://en.wikipedia.org/wiki/Mutual_authentication).
+To use most API endpoints you need to provide a bearer token ([JWT](https://de.wikipedia.org/wiki/JSON_Web_Token)) in the `Authorization` header of you requests. This token can be aquired from [Keycloak](https://github.com/keycloak/keycloak) running on [vision-x-auth.base-x-ecosystem.org](https://vision-x-auth.base-x-ecosystem.org).
 
 ## Get your Certificate
 

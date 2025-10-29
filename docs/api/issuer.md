@@ -4,7 +4,7 @@ The Issuer is responsible for issuing `Verifiable Credentials` and verifying `Ve
 
 ## Issue Credentials
 
-Credentials can be issued by sending a `POST` request to `/issuer/issue`. As this endpoint is protected and can only be used by administrators, this documentation will provide no detailled explanation on this endpoint.
+Credentials can be issued by sending a `POST` request to `/issuer/issue/membership`, `/issuer/issue/bpn` and `/issuer/issue/governance` respectively. As these endpoints are protected and can only be used by administrators, this documentation will provide no detailled explanation on these endpoints.
 
 ## DID Document
 
