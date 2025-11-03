@@ -39,7 +39,7 @@ Here are a concrete examples on how to use the certificate files to send the req
 curl -k --cert <cert-files-dir>/tls.crt --key <cert-files-dir>/tls.key \
   -X POST "https://vision-x-auth.base-x-ecosystem.org/realms/user/protocol/openid-connect/token" \
   -d "client_id=api-client" \
-  -d "grant_type=client_credentials" \
+  -d "grant_type=password" \
   -d "scope=openid"
 ```
 
@@ -57,7 +57,7 @@ cert = (cert_files_dir / "tls.crt", cert_files_dir / "tls.key")
 url = "https://vision-x-auth.base-x-ecosystem.org/realms/user/protocol/openid-connect/token"
 data = {
     "client_id": f"api-client",
-    "grant_type": "client_credentials",
+    "grant_type": "password",
     "scope": "openid"
 }
 
