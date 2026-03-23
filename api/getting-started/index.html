@@ -707,53 +707,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-your-certificate" class="md-nav__link">
+  <a href="#get-your-api-key" class="md-nav__link">
     <span class="md-ellipsis">
-      Get your Certificate
+      Get your API Key
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-a-bearer-token" class="md-nav__link">
+  <a href="#validity" class="md-nav__link">
     <span class="md-ellipsis">
-      Get a Bearer Token
+      Validity
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example requests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example requests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      curl
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      python
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1175,53 +1142,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-your-certificate" class="md-nav__link">
+  <a href="#get-your-api-key" class="md-nav__link">
     <span class="md-ellipsis">
-      Get your Certificate
+      Get your API Key
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-a-bearer-token" class="md-nav__link">
+  <a href="#validity" class="md-nav__link">
     <span class="md-ellipsis">
-      Get a Bearer Token
+      Validity
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example requests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example requests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      curl
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      python
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1244,57 +1178,15 @@
 
 
 <h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>To use most API endpoints you need to provide a bearer token (<a href="https://de.wikipedia.org/wiki/JSON_Web_Token">JWT</a>) in the <code>Authorization</code> header of you requests. This token can be aquired from <a href="https://github.com/keycloak/keycloak">Keycloak</a> running on <a href="https://vision-x-auth.base-x-ecosystem.org">vision-x-auth.base-x-ecosystem.org</a>.</p>
-<h2 id="get-your-certificate">Get your Certificate<a class="headerlink" href="#get-your-certificate" title="Permanent link">&para;</a></h2>
+<p>To use most API endpoints you need to provide a bearer token in the <code>Authorization</code> header of you requests. For this you can use an API key as the token.</p>
+<h2 id="get-your-api-key">Get your API Key<a class="headerlink" href="#get-your-api-key" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Sign in at <a href="https://vision-x-dataspace.base-x-ecosystem.org">vision-x-dataspace.base-x-ecosystem.org</a></li>
-<li>Download the <code>cert.zip</code> file by clicking on the download button in the upper right corner</li>
-<li>Unzip the file and store the contained files (tls.crt, tls.key and cert.p12) somewhere on your device</li>
+<li>Generate an API key using the button in the upper right corner</li>
+<li>Copy and save the generated API key somewhere</li>
 </ol>
-<h2 id="get-a-bearer-token">Get a Bearer Token<a class="headerlink" href="#get-a-bearer-token" title="Permanent link">&para;</a></h2>
-<p>Now you can get the token by sending a request to the <a href="https://vision-x-auth.base-x-ecosystem.org/realms/user/protocol/openid-connect/token">Token Endpoint</a> of <a href="https://github.com/keycloak/keycloak">Keycloak</a> using the certificate files. Concrete instructions on how to do this with several tools are <a href="#example-requests">further below</a>.</p>
-<p>The response should look something like this
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ey...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28800</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;refresh_expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;id_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ey...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;not-before-policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openid profile email&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>For most API requests, you must include the <code>access_token</code> in the <code>Authorization</code> header using the format: <code>Authorization: Bearer &lt;your-access-token&gt;</code>. Such endpoints will hereafter be referred to as 'protected'.</p>
-<p>Note that this token is valid for 8 hours, after which you will need to send another request to get a new one.</p>
-<h2 id="example-requests">Example requests<a class="headerlink" href="#example-requests" title="Permanent link">&para;</a></h2>
-<p>Here are a concrete examples on how to use the certificate files to send the request to get the token.</p>
-<h3 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-k<span class="w"> </span>--cert<span class="w"> </span>&lt;cert-files-dir&gt;/tls.crt<span class="w"> </span>--key<span class="w"> </span>&lt;cert-files-dir&gt;/tls.key<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://vision-x-auth.base-x-ecosystem.org/realms/user/protocol/openid-connect/token&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_id=api-client&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=password&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;scope=openid&quot;</span>
-</code></pre></div>
-<h3 id="python">python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;&lt;your-username&gt;&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">cert_files_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&lt;cert-files-dir&gt;&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">cert</span> <span class="o">=</span> <span class="p">(</span><span class="n">cert_files_dir</span> <span class="o">/</span> <span class="s2">&quot;tls.crt&quot;</span><span class="p">,</span> <span class="n">cert_files_dir</span> <span class="o">/</span> <span class="s2">&quot;tls.key&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://vision-x-auth.base-x-ecosystem.org/realms/user/protocol/openid-connect/token&quot;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;api-client&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="s2">&quot;grant_type&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;openid&quot;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">cert</span><span class="o">=</span><span class="n">cert</span><span class="p">)</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div>
+<h2 id="validity">Validity<a class="headerlink" href="#validity" title="Permanent link">&para;</a></h2>
+<p>The API key has no expiration date. However, the full key will only be visible once upon generating. Additionally, generating a new key revokes any previous ones.</p>
 
 
 
