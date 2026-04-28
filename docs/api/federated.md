@@ -2,26 +2,90 @@
 
 There are a number of endpoints which can be used to retrieve aggregate information on all users overall.
 
-## User
+!!! info "Note"
+    For efficiency purposes these endpoints use caching. Thus, information might ocassionally be slightly out of sync.
 
-A mapping of users to the list of `BPNs` of their Connectors can be retrieved by sending a `GET` request to `/federated/user`.
+## Endpoints
 
-## Group
+=== "User"
+    Retrieve a mapping of users to the list of BPNs of their Connectors.
 
-A mapping of groups to the list of users in it can be retrieved by sending a `GET` request to `/federated/group`.
+    `GET /federated/user`
 
-## DID
+=== "Group"
+    Retrieve a mapping of groups to the list of users in it.
 
-A list of the `DIDs` of all running Connectors can be retrieved by sending a `GET` request to `/federated/did`.
+    `GET /federated/group`
 
-## BPN
+=== "DID"
+    Retrieve a list of DIDs of all running Connectors.
 
-A mapping of Connector `BPNs` to their user can be retrieved by sending a `GET` request to `/federated/bpn`.
+    `GET /federated/did`
 
-## Catalog
+=== "BPN"
+    Retrieve a mapping of Connector BPNs to their user.
 
-A collection of all offers of all running Connectors, the `Federated Catalog`, can be retrieved by sending a `GET` request to `/federated/catalog`. One can optionally specify a "group" argument to only get the offers of users in the specified group.
+    `GET /federated/bpn`
+
+=== "Catalog"
+    Retrieve a collection of all offers of all running connectors.
+
+    `GET /federated/catalog`
+
+    !!! info "Group filtering"
+        One can optionally filter to only get the offers of users in a specified group.
 
 ## Catalog (POST)
 
-In addition to the regular catalog endpoint one can also send a `POST` request to `/federated/catalog/query` to formulate more specific criteria. For more information on this, see [Federated Catalog catalog-api](https://eclipse-edc.github.io/FederatedCatalog/openapi/catalog-api/#/Federated%20Catalog/getCachedCatalog).
+In addition to the regular catalog endpoint one can also formulate more specific criteria at this endpoint.
+
+```http
+POST /federated/catalog/query
+```
+
+!!! info "API Reference"
+    For more information on this, see [Federated Catalog catalog-api](https://eclipse-edc.github.io/FederatedCatalog/openapi/catalog-api/#/Federated%20Catalog/getCachedCatalog).
+
+## Code Examples
+
+=== "Get Users"
+
+    === "curl"
+
+        ```bash
+        curl -X GET "https://vision-x-api.base-x-ecosystem.org/federated/user" \
+          -H "Accept: application/json"
+        ```
+
+    === "Python"
+
+        ```python
+        import requests
+
+        url = "https://vision-x-api.base-x-ecosystem.org/federated/user"
+
+        response = requests.get(url)
+        response.raise_for_status()
+        print(response.json())
+        ```
+
+=== "Get Catalog"
+
+    === "curl"
+
+        ```bash
+        curl -X GET "https://vision-x-api.base-x-ecosystem.org/federated/catalog" \
+          -H "Accept: application/json"
+        ```
+
+    === "Python"
+
+        ```python
+        import requests
+
+        url = "https://vision-x-api.base-x-ecosystem.org/federated/catalog"
+
+        response = requests.get(url)
+        response.raise_for_status()
+        print(response.json())
+        ```

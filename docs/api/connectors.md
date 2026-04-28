@@ -1,74 +1,203 @@
 # Connectors
 
-Just like you manage Connectors through the website, you can also manage them via the API. This section describes exactly how to do this. All endpoints described here are protected.
+Just like you manage connectors through the website, you can also manage them via the API. This section describes exactly how to do this.
 
-## Create Connectors
+!!! warning "Protected Endpoints"
+    All endpoints described on this page require authentication. Make sure to include your API key as a bearer token in the `Authorization` header of every request.
 
-You can create a Connector by sending a `POST` request to `/connectors/<your-chosen-connector-name>`.
+## Create Connector
 
-The payload must be provided as a `JSON`. If you intend on only using the `API` you can simply use the `HttpData` payload. However, if you want to also use this Connector via the website you need to provide correct storage credentials in the payload.
+Send a request with a JSON payload describing the storage backend your connector should use.
 
-After a successful request the Connector will be created and begin to start up.
-
-### HttpData
-
-```json
-{
-    "storage_type": "HttpData",
-    "storage_config": {}
-}
+```http
+POST /connectors/<your-chosen-connector-name>
 ```
 
-### AmazonS3
+| Storage Type | Storage |
+|--------------|----------|
+| `HttpData` | No external storage |
+| `AmazonS3` | S3-compatible storage |
+| `AzureStorage` | Azure Blob Storage |
 
-For explanations on the exact values you need to provide, please refer to the website documentation.
+!!! info "Storage"
+    The choice of storage type is only relevant for usage via the website. It is possible to connect any type of storage dynamically regardless of choice of storage type.
 
-```json
-{
-    "storage_type": "AmazonS3",
-    "storage_config": {
-        "bucket_name": "<bucket-name>",
-        "region": "<region>",
-        "url": "<url>",
-        "username_read": "<username-read>",
-        "password_read": "<password-read>",
-        "username_write": "<username-write>",
-        "password_write": "<password-write>"
+=== "HttpData"
+
+    ```json
+    {
+        "storage_type": "HttpData",
+        "storage_config": {}
     }
-}
-```
+    ```
 
-### AzureStorage
+    !!! tip
+        No storage credentials required. Use this if you only interact with the connector via the API.
 
-For explanations on the exact values you need to provide, please refer to the website documentation.
+=== "AmazonS3"
 
-```json
-{
-    "storage_type": "AzureStorage",
-    "storage_config": {
-        "container_name": "<container-name>",
-        "region": "<region>",
-        "url": "<url>",
-        "account_name_read": "<account-name-read>",
-        "account_key_read": "<account-key-read>",
-        "account_name_write": "<account-name-write>",
-        "account_key_write": "<account-key-write>"
+    ```json
+    {
+        "storage_type": "AmazonS3",
+        "storage_config": {
+            "bucket_name": "<bucket-name>",
+            "region": "<region>",
+            "url": "<url>",
+            "username_read": "<username-read>",
+            "password_read": "<password-read>",
+            "username_write": "<username-write>",
+            "password_write": "<password-write>"
+        }
     }
-}
+    ```
+
+    !!! warning "Storage Access"
+        Needs an S3-compatible storage to be accessible via the given credentials.
+
+=== "AzureStorage"
+
+    ```json
+    {
+        "storage_type": "AzureStorage",
+        "storage_config": {
+            "container_name": "<container-name>",
+            "region": "<region>",
+            "url": "<url>",
+            "account_name_read": "<account-name-read>",
+            "account_key_read": "<account-key-read>",
+            "account_name_write": "<account-name-write>",
+            "account_key_write": "<account-key-write>"
+        }
+    }
+    ```
+
+    !!! warning "Storage Access"
+        Needs an Azure Blob Storage to be accessible via the given credentials.
+
+## Edit Connector
+
+Similar to creation, you can also edit a connector. The payload is identical in structure to the one used when creating a connector.
+
+```http
+PUT /connectors/<connector-name>
 ```
 
-## Edit Connectors
-
-Simlarly to creating a Connector you can edit a Connector by sending a `PUT` request to `/connectors/<connector-name>`. The payload you need to provide here is exactly the same as for creating a Connector. After a successful request the Connector will restart using the newly provided configuration.
+!!! info "Restart"
+    After a successful request the connector will automatically restart using the newly provided configuration.
 
 ## Get Connectors
 
-You can get a list of all your Connectors by sending a `GET` request to `/connectors`. If you want to get only a specific Connector you can send a `GET` request to `/connectors/<connector-name>`.
+You can also retrieve information on all your connector or a specific connector.
 
-## Start and Stop Connectors
+```http
+GET /connectors
+GET /connectors/<connector-name>
+```
 
-To start and stop a Connector you can send a `GET` request to `/connectors/<connector-name>/start` and `/connectors/<connector-name>/stop` respectively.
+## Start, Stop, and Fail a Connector
 
-## Fail Connectors
+These endpoints let you control the runtime state of a connector.
 
-In some cases a Connector might be stuck in some unwanted state because of a bug. If that is the case you can get the Connector into the `FAILED` state by sending a `GET` request to `/connectors/<connector-name>/fail`. From there you can either stop or delete the Connector. Note, however, that this does not necessarily mitigate the bug.
+| Action | Endpoint |
+|--------|----------|
+| Start | `PUT /connectors/<connector-name>/start` |
+| Stop | `PUT /connectors/<connector-name>/stop` |
+| Fail | `PUT /connectors/<connector-name>/fail` |
+
+!!! warning "Using Fail"
+    Keep in mind that failing a connector does **not** necessarily fix the underlying bug. It is purely a recovery mechanism to regain control over the connector.
+
+## Code Examples
+
+=== "Create Connector (AmazonS3)"
+
+    === "curl"
+
+        ```bash
+        curl -X POST "https://vision-x-api.base-x-ecosystem.org/connectors/alice" \
+        -H "Authorization: Bearer sk-..." \
+        -H "Content-Type: application/json" \
+        -d '{
+            "storage_type": "AmazonS3",
+            "storage_config": {
+            "bucket_name": "alice-backup-bucket",
+            "region": "us-east-1",
+            "url": "https://s3.my.aws.com",
+            "username_read": "alice_read_user",
+            "password_read": "alice_read_pass123",
+            "username_write": "alice_write_user",
+            "password_write": "alice_write_pass456"
+            }
+        }'
+        ```
+
+    === "Python"
+
+        ```python
+        import requests
+
+        url = "https://vision-x-api.base-x-ecosystem.org/connectors/alice"
+        headers = {
+            "Authorization": "Bearer sk-...",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "storage_type": "AmazonS3",
+            "storage_config": {
+                "bucket_name": "alice-backup-bucket",
+                "region": "us-east-1",
+                "url": "https://s3.my.aws.com",
+                "username_read": "alice_read_user",
+                "password_read": "alice_read_pass123",
+                "username_write": "alice_write_user",
+                "password_write": "alice_write_pass456"
+            }
+        }
+
+        response = requests.post(url, json=payload, headers=headers)
+        response.raise_for_status()
+        print(response.json())
+        ```
+
+
+=== "Start Connector"
+
+    === "curl"
+
+        ```bash
+        curl -X PUT "https://vision-x-api.base-x-ecosystem.org/connectors/alice/start" \
+        -H "Authorization: Bearer sk-..."
+        ```
+
+    === "Python"
+
+        ```python
+        import requests
+
+        url = "https://vision-x-api.base-x-ecosystem.org/connectors/alice/start"
+        headers = {"Authorization": "Bearer sk-..."}
+
+        response = requests.put(url, json=payload, headers=headers)
+        response.raise_for_status()
+        ```
+
+=== "Stop Connector"
+
+    === "curl"
+
+        ```bash
+        curl -X PUT "https://vision-x-api.base-x-ecosystem.org/connectors/alice/stop" \
+        -H "Authorization: Bearer sk-..."
+        ```
+
+    === "Python"
+
+        ```python
+        import requests
+
+        url = "https://vision-x-api.base-x-ecosystem.org/connectors/alice/stop"
+        headers = {"Authorization": "Bearer sk-..."}
+
+        response = requests.put(url, json=payload, headers=headers)
+        response.raise_for_status()
+        ```
