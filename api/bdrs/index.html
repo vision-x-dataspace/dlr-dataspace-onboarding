@@ -69,7 +69,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -125,7 +125,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
@@ -135,7 +135,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
@@ -665,7 +665,7 @@
         
   
   <span class="md-ellipsis">
-    Getting started
+    Getting Started
   </span>
   
 
@@ -791,18 +791,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#management-api" class="md-nav__link">
+  <a href="#apis" class="md-nav__link">
     <span class="md-ellipsis">
-      Management API
+      APIs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#directoy-api" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Directoy API
+      Code Examples
     </span>
   </a>
   
@@ -1094,11 +1094,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../jupyter/policies/" class="md-nav__link">
+      <a href="../../jupyter/policies.ipynb" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Policies
+    None
   </span>
   
 
@@ -1142,18 +1142,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#management-api" class="md-nav__link">
+  <a href="#apis" class="md-nav__link">
     <span class="md-ellipsis">
-      Management API
+      APIs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#directoy-api" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Directoy API
+      Code Examples
     </span>
   </a>
   
@@ -1178,11 +1178,130 @@
 
 
 <h1 id="bdrs">BDRS<a class="headerlink" href="#bdrs" title="Permanent link">&para;</a></h1>
-<p>The <code>BDRS</code> (BPN DID Resolution Service) is responsible for providing a mapping between <code>BPNs</code> and <code>DIDs</code>.</p>
-<h2 id="management-api">Management API<a class="headerlink" href="#management-api" title="Permanent link">&para;</a></h2>
-<p>The <code>Management API</code> is used to manage the mapping. It is available at <code>/bdrs/management</code>, but only administrators have access to it. For detailled documentation on this API, see <a href="https://eclipse-tractusx.github.io/bpn-did-resolution-service/openapi/management-api/">BDRS management-api</a>.</p>
-<h2 id="directoy-api">Directoy API<a class="headerlink" href="#directoy-api" title="Permanent link">&para;</a></h2>
-<p>The <code>Directory API</code> can be use to retrieve the mapping. It is available at <code>/bdrs/directory</code>. For detailled documentation on this API, see <a href="https://eclipse-tractusx.github.io/bpn-did-resolution-service/openapi/directory-api/">BDRS directoy-api</a>.</p>
+<p>The <strong>BDRS</strong> (<a href="https://github.com/eclipse-tractusx/bpn-did-resolution-service">BPN-DID Resolution Service</a>) provides a mapping between <strong>BPNs</strong> (Business Partner Numbers) and <strong>DIDs</strong> (Decentralized Identifiers).</p>
+<div class="admonition warning">
+<p class="admonition-title">Connector Configuration</p>
+<p>Each connector is configured ot use this BDRS for DID resolution. Thus, making the issuer a quasi-central component of the dataspace.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">DSP 2025</p>
+<p>For communication via <a href="https://github.com/eclipse-edc/Connector/tree/main/data-protocols/dsp/dsp-2025">DSP 2025</a> the BDRS is no longer strictly necessary.</p>
+</div>
+<h2 id="apis">APIs<a class="headerlink" href="#apis" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Management API</label><label for="__tabbed_1_2">Directory API</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The <strong>Management API</strong> is used to create and manage BPN–DID mappings.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endpoint</td>
+<td><code>/bdrs/management</code></td>
+</tr>
+<tr>
+<td>Access</td>
+<td>Administrators only</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">API Reference</p>
+<p>Full OpenAPI documentation is available at the <a href="https://eclipse-tractusx.github.io/bpn-did-resolution-service/openapi/management-api/">Management API docs</a>.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>The <strong>Directory API</strong> allows you to retrieve existing BPN–DID mappings.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endpoint</td>
+<td><code>/bdrs/directory</code></td>
+</tr>
+<tr>
+<td>Access</td>
+<td>Public</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">API Reference</p>
+<p>Full OpenAPI documentation is available at the <a href="https://eclipse-tractusx.github.io/bpn-did-resolution-service/openapi/directory-api/">Directory API docs</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Add BPN-DID Entry</label><label for="__tabbed_2_2">Retrieve Full Mapping</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">curl</label><label for="__tabbed_3_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://vision-x-api.base-x-ecosystem.org/bdrs/management/bpn-directory<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-...&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">    &quot;bpn&quot;: &quot;BPNL000000000001&quot;,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">    &quot;did&quot;: &quot;did:web:example.com:BPNL000000000001&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">  }&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://vision-x-api.base-x-ecosystem.org/bdrs/management/bpn-directory&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer sk-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="s2">&quot;bpn&quot;</span><span class="p">:</span> <span class="s2">&quot;BPNL000000000001&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="s2">&quot;did&quot;</span><span class="p">:</span> <span class="s2">&quot;did:web:example.com:BPNL000000000001&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">curl</label><label for="__tabbed_4_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://vision-x-api.base-x-ecosystem.org/bdrs/directory&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://vision-x-api.base-x-ecosystem.org/bdrs/directory/bpn-directory&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
